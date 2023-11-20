@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de idade</title>
+    <style> #idade{ font-size: 50px; font-weight: bold; } </style>
+</head>
+<body>
+    <center>
+    <h1>Calcule sua idade com a data de nascimento</h1>
+
+    <label for="Data" style="font-size: 25px;">Insira a data de nascimento: </label>
+    <input type="date" id="Data">
+    
+    <button onclick="calculo()"> Enviar </button>
+
+    <p id="idade"></p>
+
+    </center>
+    <script>
+        function calculo(){
+
+            const Data = new Date(document.getElementById('Data').value);
+            const DataNow = new Date();
+
+            const mili = DataNow - Data;
+            const idade_ = Math.floor(mili / (365.25 * 24 * 60 * 60 * 1000 )) 
+
+            document.getElementById('idade').innerText = `Sua idade é de ${idade_} anos`;
+        
+        }
+    </script>
+</body>
+</html>
